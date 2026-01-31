@@ -26,7 +26,7 @@ Este repositorio contiene el desarrollo de los ejercicios prácticos del laborat
 
 ---
 
-## El Gran Desafío: Implementación de System Call en Kernel 6.x
+## Implementación de System Call en Kernel 6.x
 
 El objetivo de este ejercicio fue agregar una llamada al sistema personalizada (`sys_mycall`) en un kernel moderno, superar las protecciones de seguridad actuales y compilarlo exitosamente.
 
