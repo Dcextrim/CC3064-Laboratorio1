@@ -1,8 +1,8 @@
-# 🐧 Laboratorio de Sistemas Operativos: Modernización del Kernel Linux
+# Laboratorio de Sistemas Operativos: Modernización del Kernel Linux
 
 Este repositorio contiene el desarrollo de los ejercicios prácticos del laboratorio de Sistemas Operativos. El enfoque principal es la **modernización y compilación de un Kernel Linux (v6.x)**, adaptando metodologías antiguas (Kernel 2.6) a arquitecturas modernas (Ubuntu 24.04 / x86_64).
 
-## 📋 Información del Entorno
+## Información del Entorno
 * **Sistema Operativo Host:** Ubuntu 24.04 LTS
 * **Kernel Base Descargado:** Linux 6.18.7 (Vanilla de kernel.org)
 * **Arquitectura:** x86_64
@@ -10,22 +10,23 @@ Este repositorio contiene el desarrollo de los ejercicios prácticos del laborat
 
 ---
 
-## 📂 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 ├── Ejercicio1/          # Scripts y archivos del ejercicio 1
+│   ├── HelloWorld.c
+│   ├── Fork.c
 ├── Ejercicio2/          # Scripts y archivos del ejercicio 2
-├── Kernel_Challenge/    # Archivos modificados para el Kernel 6.18.7
+│   ├── files.c
+├── Ejercicio3/    # Archivos modificados para el Kernel 6.18.7
 │   ├── mycall.c         # Código fuente de la nueva syscall
-│   ├── Makefile         # Makefile local para la syscall
 │   ├── prueba.c         # Programa de usuario para testear la llamada
-│   └── .config          # (Opcional) Archivo de configuración usado
 └── README.md            # Documentación del proyecto
 ```
 
 ---
 
-## 🚀 El Gran Desafío: Implementación de System Call en Kernel 6.x
+## El Gran Desafío: Implementación de System Call en Kernel 6.x
 
 El objetivo de este ejercicio fue agregar una llamada al sistema personalizada (`sys_mycall`) en un kernel moderno, superar las protecciones de seguridad actuales y compilarlo exitosamente.
 
@@ -78,7 +79,7 @@ sudo make install         # Instalación del kernel y update-grub
 
 ---
 
-## ✅ Pruebas y Resultados
+## Pruebas y Resultados
 
 Para verificar el funcionamiento, se reinició el sistema con el nuevo Kernel 6.18.7 y se ejecutó un programa en espacio de usuario (`prueba.c`).
 
@@ -93,7 +94,7 @@ $ sudo dmesg | tail
 
 ---
 
-## ⚠️ Notas y Solución de Problemas
+## Solución de Problemas
 
 - **Error de Certificados:** Si al compilar aparece un error sobre `debian/canonical-certs.pem`, es necesario editar el archivo `.config` y vaciar las variables de claves confiables.
 
@@ -102,9 +103,3 @@ $ sudo dmesg | tail
 - **Grub:** Para acceder al nuevo kernel, mantener `Shift` durante el arranque y seleccionar "Opciones avanzadas para Ubuntu".
 
 ---
-
-## 👤 Autor
-
-**Dcextrim**  
-**Curso:** Sistemas Operativos  
-**Fecha:** 2026
